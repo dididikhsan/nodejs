@@ -3,19 +3,21 @@
 
 # Based on script by Richard Stanley @ https://github.com/audstanley/Node-MongoDb-Pi/
 # This is for a RaspberryPi Zero but should work across all models.
+#https://nodejs.org/dist/latest-v10.x/node-v10.24.1-linux-armv6l.tar.xz
+#https://nodejs.org/dist/latest-v10.x/node-v10.24.1-linux-armv6l.tar.gz
 
 VERSION=v6.11.3;
 
 # Creates directory for downloads, and downloads node
 cd ~/ && mkdir temp && cd temp;
-wget https://nodejs.org/dist/$VERSION/node-$VERSION-linux-armv6l.tar.gz;
-tar -xzf node-$VERSION-linux-armv6l.tar.gz;
+wget https://nodejs.org/dist/latest-v10.x/node-v10.24.1-linux-armv6l.tar.gz;
+tar -xzf node-v10.24.1-linux-armv6l.tar.gz;
 # Remove the tar after extracing it.
-sudo rm node-$VERSION-linux-armv6l.tar.gz;
+sudo rm node-v10.24.1-linux-armv6l.tar.gz;
 # This line will clear existing nodejs
 sudo rm -rf /opt/nodejs;
 # This next line will copy Node over to the appropriate folder.
-sudo mv node-$VERSION-linux-armv6l /opt/nodejs/;
+sudo mv node-v10.24.1-linux-armv6l /opt/nodejs/;
 # Remove existing symlinks
 sudo unlink /usr/bin/node;
 sudo unlink /usr/sbin/node;
